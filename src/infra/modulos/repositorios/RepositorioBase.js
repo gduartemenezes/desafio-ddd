@@ -45,3 +45,5 @@ class RepositorioBase {
       : this.collection.find(document, { select, populate });
   }
 }
+
+export default new RepositorioBase();

@@ -1,10 +1,10 @@
-export default class Entity {
+export default class Entidade {
   constructor() {
     this.id = '';
   }
 
   equals(other) {
-    if (other instanceof Entity === false) {
+    if (other instanceof Entidade === false) {
       return false;
     }
     return other.id ? this.referenceEquals(other.id) : this === other;

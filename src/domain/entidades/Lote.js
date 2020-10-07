@@ -7,3 +7,5 @@ class Lote extends Entidade {
     this.ds_lote = ds_lote;
   }
 }
+
+export default new Lote();

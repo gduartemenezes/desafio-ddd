@@ -20,3 +20,5 @@ class Animal extends Entidade {
     this.dt_nascimento = dt_nascimento;
   }
 }
+
+export default new Animal();
