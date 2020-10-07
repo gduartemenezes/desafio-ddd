@@ -1,14 +1,26 @@
+import { Sequelize } from 'sequelize';
 import Entidade from './EntidadeBase';
 
 class Pessoa extends Entidade {
-  constructor(no_pessoa, no_email, endereco, sexo, ic_ativo) {
-    super();
-    this.no_pessoa = no_pessoa;
-    this.no_email = no_email;
-    this.endereco = endereco;
-    this.sexo = sexo;
-    this.ic_ativo = ic_ativo;
+  static init(sequelize) {
+    super.init(
+      {
+        id: {
+          type: Sequelize.UUIDV4,
+          primaryKey: true,
+        },
+        no_pessoa: Sequelize.STRING,
+        no_email: Sequelize.STRING,
+        endereco: Sequelize.STRING,
+        sexo: Sequelize.STRING,
+        ativo: Sequelize.BOOLEAN,
+      },
+      {
+        sequelize,
+      }
+    );
+    return this;
   }
 }
 
-export default new Pessoa();
+export default Pessoa;

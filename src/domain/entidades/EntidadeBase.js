@@ -1,4 +1,5 @@
-export default class Entidade {
+import { Model } from 'sequelize';
+class Entidade extends Model {
   constructor() {
     this.id = '';
   }
@@ -23,3 +24,5 @@ export default class Entidade {
     return this.id;
   }
 }
+
+export default Entidade;

@@ -1,11 +1,23 @@
+import { Sequelize } from 'sequelize/types';
 import Entidade from './EntidadeBase';
 
 class Lote extends Entidade {
-  constructor(no_lote, ds_lote) {
-    super();
-    this.no_lote = no_lote;
-    this.ds_lote = ds_lote;
+  static init(sequelize) {
+    super.init(
+      {
+        id: {
+          type: Sequelize.UUIDV4,
+          primaryKey: true,
+        },
+        no_lote: Sequelize.STRING,
+        ds_lote: Sequelize.STRING,
+      },
+      {
+        sequelize,
+      }
+    );
+    return this;
   }
 }
 
-export default new Lote();
+export default Lote;
